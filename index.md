@@ -26,6 +26,16 @@ title: "Pattern-Based Encoding for Symbolic Music Generation"
     width: 100%; /* Make audio player responsive within the cell */
     min-width: 250px; /* Adjust based on your needs */
 }
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
 </style>
 
 [Anonymous Authors](#) &emsp;
@@ -55,16 +65,16 @@ anonymous@ismir.net
 
 <hr style="border: double 1.35px silver;">
 
+<br><br>
+
 ## 2. Experiment Results
 ---
 
 ### 2.1 Recurrence Rate
 > We quantify how effectively the model reuses or repeats patterns in generated continuations. This “recurrence rate” is derived from analyzing how often the model revisits the same melodic or chordal patterns.
 
-<img src="tables/02_Experiment_Results_Recurrence_Rate.png" style="border: 2px solid grey">
-{:.center .larger}
 
-An example table of **recurrence rate** comparisons (averaged across several test prompts) might look like this:
+A table of **recurrence rate** comparisons (averaged across several test prompts) might look like this:
 
 | Model                   | Melody Recurrence | Chord Recurrence |
 |-------------------------|:-----------------:|:----------------:|
@@ -74,18 +84,17 @@ An example table of **recurrence rate** comparisons (averaged across several tes
 
 > **Observation**: Models using Pattern-Based Encoding generally show **higher pattern recurrence**, indicating better thematic consistency in generated pieces.
 
-<br>
+<br><br>
 
 ### 2.2 Subjective Listening Test
 > In addition to objective metrics, we conducted a listening test where participants rated each generation on overall musical quality and consistency.
 
-<img src="tables/02_Experiment_Results_Subjective_Listening.png" style="border: 2px solid grey">
-{:.center .larger}
 
-**Example Results**: Average preference scores (1–5 scale) from 15 participants:
+**Results**: Average preference scores (1–5 scale) from 15 participants:
+
 
 | Model             | Mean Score | Std Dev  |
-|-------------------|:----------:|:--------:|
+|:-----------------:|:----------:|:--------:|
 | **REMI**          | 3.667      | 1.111    |
 | **SimpleBPE**     | 2.667      | 1.110    |
 | **Pattern-Based** | 4.333      | 1.109    |
@@ -93,6 +102,8 @@ An example table of **recurrence rate** comparisons (averaged across several tes
 > **Observation**: Participants showed a clear preference for **Pattern-Based Encodings**, particularly noting their structured and coherent melodic/harmonic development.
 
 <hr style="border: double 1.35px silver;">
+
+<br><br>
 
 ## 3. Visualizer
 ---
@@ -106,24 +117,29 @@ An example table of **recurrence rate** comparisons (averaged across several tes
 
 <hr style="border: double 1.35px silver;">
 
+<br><br>
+
 ## 4. Generated Samples
 ---
 > Below are **three** random seed generations for **three models** (total of **nine audio clips**). Each model only receives a start-of-sequence prompt and generates up to N measures. We convert the tokens to MIDI and render the resulting audio.
 
 <div class="audio-table" markdown="block">
 
-|                        | **Sample #1**                                    | **Sample #2**                                    | **Sample #3**                                    |
-|------------------------|:------------------------------------------------:|:------------------------------------------------:|:------------------------------------------------:|
-| **REMI**               | {% include audio_player.html filename="audio/Listening/REMI/Prompt3_REMI.mp3" %}        | {% include audio_player.html filename="audio/Listening/REMI/Prompt2_REMI.mp3" %}        | {% include audio_player.html filename="audio/Listening/REMI/Prompt2_REMI.mp3" %}        |
-| **SimpleBPE**          | {% include audio_player.html filename="audio/Listening/SimpleBPE3000/Prompt1_SimpleBPE.mp3" %}   | {% include audio_player.html filename="audio/Listening/SimpleBPE3000/Prompt2_SimpleBPE.mp3" %}   | {% include audio_player.html filename="audio/Listening/SimpleBPE3000/Prompt3_SimpleBPE.mp3" %}   |
-| **Pattern-Based (Ours)** | {% include audio_player.html filename="audio/Listening/Pattern-Based_300_100_with_Dropout/Prompt1_PB.mp3" %} | {% include audio_player.html filename="audio/Listening/Pattern-Based_300_100_with_Dropout/Prompt2_PB.mp3" %} | {% include audio_player.html filename="audio/Listening/Pattern-Based_300_100_with_Dropout/Prompt3_PB.mp3" %} |
+|                         | **Sample #1**                                                              | **Sample #2**                                                              | **Sample #3**                                                              |
+|-------------------------|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
+| **REMI**                | {% include audio_player.html filename="audio/Listening/REMI/Prompt3_REMI.mp3" %}       | {% include audio_player.html filename="audio/Listening/REMI/Prompt2_REMI.mp3" %}       | {% include audio_player.html filename="audio/Listening/REMI/Prompt2_REMI.mp3" %}       |
+| **SimpleBPE**           | {% include audio_player.html filename="audio/Listening/SimpleBPE3000/Prompt1_SimpleBPE.mp3" %} | {% include audio_player.html filename="audio/Listening/SimpleBPE3000/Prompt2_SimpleBPE.mp3" %} | {% include audio_player.html filename="audio/Listening/SimpleBPE3000/Prompt3_SimpleBPE.mp3" %} |
+| **Pattern-Based (Ours)**| {% include audio_player.html filename="audio/Listening/Pattern-Based_300_100_with_Dropout/Prompt1_PB.mp3" %} | {% include audio_player.html filename="audio/Listening/Pattern-Based_300_100_with_Dropout/Prompt2_PB.mp3" %} | {% include audio_player.html filename="audio/Listening/Pattern-Based_300_100_with_Dropout/Prompt3_PB.mp3" %} |
+
 
 </div>
 
-> **Observations**:  
-> - **REMI** can sometimes generate longer sequences but may produce repetitive events.  
-> - **SimpleBPE** effectively shortens sequences but may suffer from unintuitive token merges.  
-> - **Pattern-Based** tends to preserve meaningful chord/melody interplay, yielding more varied and coherent passages.
+<br>
+
+**Observations**:  
+
+- **REMI** can sometimes generate longer sequences but may produce repetitive events.  
+- **SimpleBPE** effectively shortens sequences but may suffer from unintuitive token merges.  
+- **Pattern-Based** tends to preserve meaningful chord/melody interplay, yielding more varied and coherent passages.
 
 <hr style="border: double 1.35px silver;">
-
