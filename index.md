@@ -44,6 +44,7 @@ anonymous@ismir.net
   - [Recurrence Rate](#recurrence-rate)
   - [Subjective Listening Test](#listening-test)
 - [Visualizer](#visualizer)
+- [Generated Samples](#generated-samples)
 
 <hr style="border: double 1.35px silver;">
 
@@ -64,8 +65,7 @@ Comparison of encoding methods.
 ## Experiment Results {#experiment}
 ---
 ### Recurrence Rate {#recurrence-rate}
----
-<img src="tables/02_Experiment_Results_Subjective_Listening.png" style="border: 2px solid grey">
+<img src="tables/02_Experiment_Results_Recurrence_Rate.png" style="border: 2px solid grey">
 A table of **recurrence rate** comparisons.
 {:.center .larger}
 
@@ -75,6 +75,22 @@ A table of **recurrence rate** comparisons.
 ---
 
 ### Subjective Listening Test {#listening-test}
+<img src="tables/02_Experiment_Results_Subjective_Listening.png" style="border: 2px solid grey">
+A table of **Mean and Standard Deviation** comparisons.
+{:.center .larger}
+
+> __Note__: Below are **three** random seed generations for **three models** (total of **nine audio clips**). Each model only receives a start-of-sequence prompt and generates up to N measures. We convert the tokens to MIDI and render the resulting audio.
+<br>
+
+<hr style="border: double 1.35px silver;">
+
+## Visualizer {#visualizer}
+
+{% include youtube_player.html id="uXYK9tqPepQ" %}
+
+<hr style="border: double 1.35px silver;">
+
+## Generated Samples {#samples}
 
 > __Note__: Below are **three** random seed generations for **three models** (total of **nine audio clips**). Each model only receives a start-of-sequence prompt and generates up to N measures. We convert the tokens to MIDI and render the resulting audio.
 
@@ -86,10 +102,4 @@ A table of **recurrence rate** comparisons.
 | __Pattern-Based (Ours)__ | {% include audio_player.html filename="audio/Listening/Pattern-Based_300_100_with_Dropout/Prompt1_PB.mp3" %} | {% include audio_player.html filename="audio/Listening/Pattern-Based_300_100_with_Dropout/Prompt2_PB.mp3" %} | {% include audio_player.html filename="audio/Listening/Pattern-Based_300_100_with_Dropout/Prompt3_PB.mp3" %} |
 
 </div>
-<hr style="border: double 1.35px silver;">
-
-## Visualizer {#visualizer}
-
-{% include youtube_player.html id="uXYK9tqPepQ" %}
-
 <hr style="border: double 1.35px silver;">
