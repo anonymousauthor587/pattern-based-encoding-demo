@@ -34,7 +34,7 @@ anonymous@ismir.net
 {% include icon_link.html text="code" icon=site.icons.code href="https://github.com/anonymousauthor587/pattern-based-encoding-demo" %} &emsp;
 {:.center}
 
-{% include youtube_player.html id="ebRg4T2A-W0" %}
+{% include youtube_player.html id="uXYK9tqPepQ" %}
 
 <hr style="border: double 1.35px silver;">
 ## Content
@@ -52,7 +52,7 @@ anonymous@ismir.net
 <img src="img/01_Encoding.png" style="border: 2px solid grey">
 Comparison of encoding methods.
 {:.center .larger}
-> __Key Ideas__: **Voice Separation** - Separates melodic vs. chord clusters before encoding, ensuring that distinct voices do not merge unnaturally in the token space.
+> __Key Ideas__: <br>**Voice Separation** - Separates melodic vs. chord clusters before encoding, ensuring that distinct voices do not merge unnaturally in the token space.
 <br>
 **Note-Level BPE** - Applies BPE to note attributes (pitch intervals, durations, rests) for more musically meaningful “subword” patterns.  
 <br>
@@ -70,8 +70,8 @@ A table of **recurrence rate** comparisons.
 {:.center .larger}
 
 > __Note__: We quantify how effectively the model reuses or repeats patterns in generated continuations. This “recurrence rate” is derived from analyzing how often the model revisits the same melodic or chordal patterns.
+<br>
 
-</div>
 ---
 
 ### Subjective Listening Test {#listening-test}
